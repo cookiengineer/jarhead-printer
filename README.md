@@ -70,13 +70,17 @@ those can withstand higher temperatures.
 
 **X-Carriage**:
 
+The default X-Cart matches the specifications for Openbuilds Delrin Mini V Wheels.
+
 - [1x X Cart](./design/x-carriage/1xX_Cart.stl)
 - [1x X Drive Left](./design/x-carriage/1xX_Drive_Left_with_Motor_Mount.stl)
 - [1x X Drive Right](./design/x-carriage/1xX_Drive_Right.stl)
 
 **Y-Carriage**:
 
-- [1x Y Cart](./design/y-carriage/1xY_Cart.stl)
+The default Y-Cart matches the specifications for Openbuilds Delrin Mini V Wheels.
+
+- [1x Y Cart](./design/y-carriage/1xY_Cart.stl) or alternatively [1x Y Cart for 605ZZ V Wheels](./design/y-carriage/1xY_Cart_for_605ZZ_V_Wheels.stl)
 - [1x Y Extrusion Holder](./design/y-carriage/1xY_Extrusion_Holder.stl)
 - [1x Y Motor Holder](./design/y-carriage/1xY_Motor_Holder.stl)
 
@@ -90,7 +94,7 @@ those can withstand higher temperatures.
 **Tools**:
 
 - [1x E3D Tool Cap](./design/tools/1xE3D_Tool_Cap.stl)
-- [1x E3D Tool Plate](./design/tools/1xE3D_Tool_Plate.stl)
+- [1x E3D Tool Plate](./design/tools/1xE3D_Tool_Plate.stl) or alternatively [1x E3D Tool Plate without Belt Holder](./design/tools/1xE3D_Tool_Plate_without_Belt_Holder.stl)
 
 
 ## Other Parts
@@ -101,6 +105,7 @@ replacement or prototyping parts.
 
 - [2020 Alu Profile](./design/parts/2020_Alu_Profile.stl)
 - [2040 Alu Profile](./design/parts/2040_Alu_Profile.stl)
+- [605ZZ V Wheel](./design/parts/605ZZ_V_Wheel.stl)
 - [GT20 Pulley](./design/parts/GT20_Pulley.stl)
 - [GT20 Wheel](./design/parts/GT20_Wheel.stl)
 - [M5 T-Nut](./design/parts/M5_T_Nut.stl)
