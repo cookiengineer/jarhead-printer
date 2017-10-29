@@ -1,0 +1,110 @@
+[{
+	"name": "Z Motor Mount Left",
+	"amount": 1,
+	"stl": "frame/1xZ_Motor_Mount_Left.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 3
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 3
+	}, {
+		"name": "M3x20mm Bolt",
+		"amount": 4
+	}, {
+		"name": "5x8mm Aluminium Z-Coupler",
+		"amount": 1
+	}]
+}, {
+	"name": "Z Motor Mount Right",
+	"amount": 1,
+	"stl": "frame/1xZ_Motor_Mount_Right.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 3
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 3
+	}, {
+		"name": "M3x20mm Bolt",
+		"amount": 4
+	}, {
+		"name": "5x8mm Aluminium Z-Coupler",
+		"amount": 1
+	}]
+}, {
+	"name": "Z Rod Holder Left",
+	"amount": 1,
+	"stl": "frame/1xZ_Rod_Holder_Left.stl",
+	"requires": [{
+		"name": "ABEC-5 608ZZ Bearing",
+		"amount": 1
+	}, {
+		"name": "M5x10mm Bolt",
+		"amount": 3
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 3
+	}]
+}, {
+	"name": "Z Rod Holder Right",
+	"amount": 1,
+	"stl": "frame/1xZ_Rod_Holder_Right.stl",
+	"requires": [{
+		"name": "ABEC-5 608ZZ Bearing",
+		"amount": 1
+	}, {
+		"name": "M5x10mm Bolt",
+		"amount": 3
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 3
+	}]
+}, {
+	"name": "Bottom Tee Plate",
+	"amount": 2,
+	"stl": "frame/2xBottom_Tee_Plate.stl",
+	"requires": [{
+		"name": "M6x20mm Bolt",
+		"amount": 2
+	}, {
+		"name": "M5x10mm Bolt",
+		"amount": 4
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 4
+	}]
+}, {
+	"name": "Side Tee Corner",
+	"amount": 2,
+	"stl": "frame/2xSide_Tee_Corner.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 6
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 6
+	}]
+}, {
+	"name": "Top Corner Plate",
+	"amount": 2,
+	"stl": "frame/2xTop_Corner_Plate.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 6
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 6
+	}]
+}, {
+	"name": "Bottom Corner Plate",
+	"amount": 8,
+	"stl": "frame/8xBottom_Corner_Plate.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 4
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 4
+	}]
+}]

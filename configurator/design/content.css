@@ -1,0 +1,184 @@
+
+button {
+	display: inline-block;
+	margin: 0px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+	background: #3e4351;
+	border: 1px solid #2a2c36;
+	border-radius: 4px;
+	transition: all 250ms ease-out;
+	vertical-align: middle;
+	outline: none;
+	cursor: pointer;
+}
+
+button:hover,
+button:focus {
+	outline: none;
+	background: #677085;
+	transition: all 250ms ease-out;
+}
+
+button:active {
+	outline: none;
+	background: #4dadd4;
+	transition: all 0ms ease-out;
+}
+
+button[disabled],
+button[disabled]:hover
+button[disabled]:focus,
+button[disabled]:active {
+	color: #677085;
+	background: #3e4351;
+}
+
+input {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px 4px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+	background: #3e4351;
+	border: 1px solid #2a2c36;
+	border-radius: 4px;
+	transition: all 250ms ease-out;
+	vertical-align: middle;
+	outline: none;
+}
+
+input:hover,
+input:focus {
+	outline: none;
+	background: #677085;
+	transition: all 250ms ease-out;
+}
+
+input:focus {
+	outline: none;
+	background: #4dadd4;
+	transition: all 0ms ease-out;
+}
+
+input[type="number"] {
+	width: 3em;
+	cursor: text;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	width: 24px;
+	height: 24px;
+	margin: 0px;
+	padding: 0px;
+	background: #3e4351;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus,
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+	background: #677085;
+}
+
+input[type="checkbox"]:checked:before,
+input[type="radio"]:checked:before {
+	display: block;
+	box-sizing: border-box;
+	width: 22px;
+	height: 22px;
+	margin: 0px;
+	padding: 0px;
+	content: "X";
+	color: #ffffff;
+	font-family: monospace;
+	text-align: center;
+}
+
+input[type="checkbox"][disabled],
+input[type="number"][disabled],
+input[type="text"][disabled] {
+	background: #3e4351;
+	cursor: not-allowed;
+}
+
+
+
+a {
+	color: #ffffff;
+	font-family: 'DejaVu Sans';
+	font-size: 16px;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #4dadd4;
+	transition: all 250ms ease-out;
+}
+
+fieldset {
+	color: #ffffff;
+	border: 1px solid #2a2c36;
+}
+
+table th {
+	margin: 0px;
+	padding: 2px 1em;
+}
+
+table td {
+	margin: 0px;
+	padding: 2px 1em;
+}
+
+table tr:nth-child(2n) {
+	background: #404552;
+	background: #606774;
+}
+
+
+
+#config fieldset > div {
+	line-height: 1.2em;
+	vertical-align: middle;
+}
+
+
+#config fieldset > div label {
+	display: inline-block;
+	margin: 0px 1em 0px 0px;
+}
+
+#config fieldset > div input[type="number"] {
+	width: 3em;
+}
+
+#bill table {
+	width: 50%;
+	min-width: 660px;
+	margin: 0px auto;
+}
+
+#bill table td:nth-child(2) {
+	text-align: right;
+}
+
+#checklist table {
+	width: 50%;
+	min-width: 660px;
+	margin: 0px auto;
+}
+
+#checklist table td:nth-child(2) {
+	text-align: right;
+}
+

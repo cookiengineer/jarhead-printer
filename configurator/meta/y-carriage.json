@@ -1,0 +1,93 @@
+[{
+	"name": "Y-Cart",
+	"amount": 1,
+	"stl": "y-carriage/1xY-Cart.stl",
+	"depends": {
+		"config-wheels": "openbuilds"
+	},
+	"requires": [{
+		"name": "Openbuilds Delrin Mini-V Wheel",
+		"amount": 4
+	}, {
+		"name": "M5x30mm Bolt",
+		"amount": 4
+	}, {
+		"name": "M5 self-locking Nut",
+		"amount": 4
+	}, {
+		"name": "M5x16mm Bolt",
+		"amount": 2
+	}, {
+		"name": "M5 Nut",
+		"amount": 2
+	}]
+}, {
+	"name": "Y-Cart",
+	"amount": 1,
+	"stl": "y-carriage/1xY-Cart_for_605ZZ_Wheels.stl",
+	"depends": {
+		"config-wheels": "605zz"
+	},
+	"requires": [{
+		"name": "ABEC-5 605ZZ Bearing",
+		"amount": 8
+	}, {
+		"name": "M5 Washer",
+		"amount": 8
+	}, {
+		"name": "605ZZ Wheel",
+		"amount": 4
+	}, {
+		"name": "M5x30mm Bolt",
+		"amount": 4
+	}, {
+		"name": "M5 self-locking Nut",
+		"amount": 4
+	}, {
+		"name": "M5x16mm Bolt",
+		"amount": 2
+	}, {
+		"name": "M5 Nut",
+		"amount": 2
+	}]
+}, {
+	"name": "Y-Rear",
+	"amount": 1,
+	"stl": "y-carriage/1xY-Rear_with_Motor_Mount.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 4
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 4
+	}, {
+		"name": "M3x20mm Bolt",
+		"amount": 4
+	}, {
+		"name": "GT20 Pulley",
+		"amount": 1
+	}]
+}, {
+	"name": "Y-Front",
+	"amount": 1,
+	"stl": "y-carriage/1xY-Front_with_Belt_Puller.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 4
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 4
+	}, {
+		"name": "M5x30mm Bolt",
+		"amount": 1
+	}, {
+		"name": "M5 Nut",
+		"amount": 1
+	}, {
+		"name": "M5 Washer",
+		"amount": 1
+	}, {
+		"name": "Belt Tensioner",
+		"amount": 1
+	}]
+}]

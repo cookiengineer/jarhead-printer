@@ -1,0 +1,50 @@
+[{
+	"name": "2040 Aluminium Profile B-Type Nut 6",
+	"amount": 2,
+	"length": 440,
+	"depends": {
+		"z": 440
+	}
+}, {
+	"name": "2040 Aluminium Profile B-Type Nut 6",
+	"amount": 2,
+	"length": 340,
+	"depends": {
+		"y": 340
+	}
+}, {
+	"name": "2040 Aluminium Profile B-Type Nut 6",
+	"amount": 3,
+	"length": 310,
+	"depends": {
+		"x": 310
+	}
+}, {
+	"name": "2020 Aluminium Profile B-Type Nut 6",
+	"amount": 1,
+	"length": 425,
+	"depends": {
+		"x": 425
+	}
+}, {
+	"name": "2020 Aluminium Profile B-Type Nut 6",
+	"amount": 1,
+	"length": 380,
+	"depends": {
+		"y": 380
+	}
+}, {
+	"name": "8mm Threaded Rod",
+	"amount": 2,
+	"length": 355,
+	"depends": {
+		"z": 355
+	}
+}, {
+	"name": "8mm Rod",
+	"amount": 2,
+	"length": 360,
+	"depends": {
+		"z": 360
+	}
+}]

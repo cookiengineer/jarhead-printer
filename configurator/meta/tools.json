@@ -1,0 +1,26 @@
+[{
+	"name": "E3D Tool Plate",
+	"amount": 1,
+	"stl": "tools/1xE3D_Tool_Plate.stl",
+	"depends": {
+		"config-tools": "e3d-hotend"
+	},
+	"requires": [{
+		"name": "M5 Nut",
+		"amount": 2
+	}]
+}, {
+	"name": "E3D Tool Cap",
+	"amount": 1,
+	"stl": "tools/1xE3D_Tool_Cap.stl",
+	"depends": {
+		"config-tools": "e3d-hotend"
+	},
+	"requires": [{
+		"name": "M5x30mm Bolt",
+		"amount": 2
+	}, {
+		"name": "E3D V6 Hotend",
+		"amount": 1
+	}]
+}]

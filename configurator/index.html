@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jarhead Configurator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<link rel="stylesheet" href="./design/layout.css">
+		<link rel="stylesheet" href="./design/content.css">
+
+	</head>
+	<body>
+		<aside>
+			<menu>
+				<li><a href="#config" class="active">1. Configuration</a></li>
+				<li><a href="#bill">2. Bill of Materials</a></li>
+				<li><a href="#checklist">3. Print Checklist</a></li>
+			</menu>
+		</aside>
+		<main>
+			<noscript>
+				<figure id="warning"><div>Please activate JavaScript!</div></figure>
+			</noscript>
+			<section id="config" class="active">
+				<fieldset>
+					<legend>Configuration</legend>
+					<p>What is the desired Manufacturing Volume?</p>
+					<div><label for="config-x">X</label><input id="config-x" name="config-x" type="number" value="265" min="0" step="5"> mm</div>
+					<div><label for="config-y">Y</label><input id="config-y" name="config-y" type="number" value="210" min="0" step="5"> mm</div>
+					<div><label for="config-z">Z</label><input id="config-z" name="config-z" type="number" value="300" min="0" step="5"> mm</div>
+					<br>
+					<p>Which Tools do you want to use?</p>
+					<div><label style="width:6em" for="config-tools-e3d">E3D Hotend</label><input id="config-tools-e3d" name="config-tools" type="checkbox" value="e3d-hotend" checked></div>
+					<div><label style="width:6em;text-decoration:line-through" for="config-tools-cnc">CNC Drill</label><input id="config-tools-cnc" name="config-tools" type="checkbox" value="cnc-drill" disabled title="... coming soon"></div>
+					<br>
+					<p>Which Wheels do you want to use?</p>
+					<div><label style="width:12em" for="config-wheels-openbuilds">Openbuilds Delrin Mini</label><input id="config-wheels-openbuilds" name="config-wheels" type="radio" value="openbuilds" checked></div>
+					<div><label style="width:12em" for="config-wheels-605zz">Self-Printed 605ZZ</label><input id="config-wheels-605zz" name="config-wheels" type="radio" value="605zz"></div>
+					<br>
+					<p>Which Belt Idlers do you want to use?</p>
+					<div><label style="width:12em" for="config-idlers-openbuilds">Openbuilds Pulley Idler</label><input id="config-idlers-openbuilds" name="config-idlers" type="radio" value="openbuilds" checked></div>
+					<div><label style="width:12em" for="config-idlers-gt20">Self-Printed GT20 Idler</label><input id="config-idlers-gt20" name="config-idlers" type="radio" value="gt20"></div>
+					<br>
+					<br>
+					<button id="config-save" onclick="APP.config()">Save Changes</button>
+					<button id="config-restore" onclick="APP.restore()">Restore Defaults</button>
+				</fieldset>
+			</section>
+			<section id="bill">
+				<table>
+					<thead>
+						<th>&nbsp;</th>
+						<th>Amount</th>
+						<th>Description</th>
+					</thead>
+					<tbody id="bill-table">
+					</tbody>
+				</table>
+			</section>
+			<section id="checklist">
+				<table>
+					<thead>
+						<th>&nbsp;</th>
+						<th>Amount</th>
+						<th>Description</th>
+						<th>STL</th>
+					</thead>
+					<tbody id="checklist-table">
+					</tbody>
+				</table>
+			</section>
+		</main>
+		<script src="./source/layout.js"></script>
+		<script src="./source/config.js"></script>
+		<script src="./source/bill.js"></script>
+		<script src="./source/checklist.js"></script>
+	</body>
+</html>
