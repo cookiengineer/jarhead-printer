@@ -1,0 +1,178 @@
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #404552;
+}
+
+aside,
+aside * {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+aside {
+	display: block;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: auto;
+	left: 0px;
+	margin: 0px;
+	padding: 16px;
+	color: #ffffff;
+	font-family: 'DejaVu Sans';
+	text-align: center;
+	border-left: 1px solid #2a2c36;
+	background: #333742;
+	z-index: 2;
+}
+
+aside h3 {
+	display: block;
+	margin: 0px auto 16px auto;
+	padding: 0px;
+	color: #ffffff;
+	font-size: 32px;
+	font-family: 'DejaVu Sans';
+	text-align: center;
+	line-height: 32px;
+	vertical-align: middle;
+}
+
+aside a {
+	display: block;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	color: #ffffff;
+	font-family: 'DejaVu Sans';
+	font-size: 16px;
+	text-decoration: none;
+}
+
+aside a:hover,
+aside a:focus {
+	color: #4dadd4;
+	transition: all 250ms ease-out;
+}
+
+aside button {
+	display: inline-block;
+	margin: 0px 0px 0px 16px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+	background: #3e4351;
+	border: 1px solid #2a2c36;
+	border-radius: 4px;
+	transition: all 250ms ease-out;
+	vertical-align: middle;
+	outline: none;
+	cursor: pointer;
+}
+
+aside button:hover,
+aside button:focus {
+	outline: none;
+	background: #677085;
+	transition: all 250ms ease-out;
+}
+
+aside button:active {
+	outline: none;
+	background: #4dadd4;
+	transition: all 0ms ease-out;
+}
+
+aside button[disabled],
+aside button[disabled]:hover
+aside button[disabled]:focus,
+aside button[disabled]:active {
+	color: #677085;
+	background: #3e4351;
+}
+
+aside label {
+	font-family: 'DejaVu Sans';
+	color: #ffffff;
+	margin-right: 16px;
+}
+
+aside span {
+	display: inline-block;
+	width: 32px;
+}
+
+aside i {
+	display: inline-block;
+	margin: 0px 0px 0px 32px;
+	color: #ffffff;
+	font-family: 'DejaVu Sans';
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: middle;
+}
+
+aside input {
+	display: inline-block;
+	padding: 0px 4px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+	background: #3e4351;
+	border: 1px solid #2a2c36;
+	border-radius: 4px;
+	transition: all 250ms ease-out;
+	vertical-align: middle;
+	outline: none;
+}
+
+aside input:hover,
+aside input:focus {
+	outline: none;
+	background: #677085;
+	transition: all 250ms ease-out;
+}
+
+aside input:focus {
+	outline: none;
+	background: #4dadd4;
+	transition: all 0ms ease-out;
+}
+
+aside input[type="number"] {
+	width: 3em;
+}
+
+main {
+	display: block;
+	margin: 96px 0px 0px 0px;
+	color: #ffffff;
+	font-family: 'DejaVu Sans';
+}
+
+main table {
+	margin: 0px auto;
+	width: 50%;
+}
+
+main table th {
+	padding: 2px 1em;
+}
+
+main table td {
+	padding: 2px 1em;
+	border: 1px solid #2a2c36;
+}
+
+main table tr td:first-child,
+main table tr th:first-child,
+main table tr td:last-child,
+main table tr th:last-child {
+	width: 5em;
+	text-align: center;
+}
+
