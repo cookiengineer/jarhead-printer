@@ -70,8 +70,7 @@ building for an E3D V6 Hotend.
 
 # Work in Progress
 
-- Endstop Integration (possible part redesign upcoming)
-- Extruder Motor Design (unsure which is best atm)
+- Extruder Motor Design
 - Mainboard Mount Design
 - Power Supply Mount Design
 - Firmware (probably a Marlin fork)

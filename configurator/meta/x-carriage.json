@@ -72,6 +72,9 @@
 	}, {
 		"name": "GT20 Pulley",
 		"amount": 1
+	}, {
+		"name": "Endstop Switch",
+		"amount": 1
 	}]
 }, {
 	"name": "X-Right",
@@ -100,6 +103,9 @@
 		"amount": 1
 	}, {
 		"name": "Belt Tensioner",
+		"amount": 1
+	}, {
+		"name": "Endstop Switch",
 		"amount": 1
 	}]
 }]

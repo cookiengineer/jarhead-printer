@@ -1,4 +1,18 @@
 [{
+	"name": "Z Endstop",
+	"amount": 1,
+	"stl": "frame/1xZ_Endstop.stl",
+	"requires": [{
+		"name": "M5x10mm Bolt",
+		"amount": 2
+	}, {
+		"name": "M5 T-Slot Nut",
+		"amount": 2
+	}, {
+		"name": "Endstop Switch",
+		"amount": 1
+	}]
+}, {
 	"name": "Z Motor Mount Left",
 	"amount": 1,
 	"stl": "frame/1xZ_Motor_Mount_Left.stl",
