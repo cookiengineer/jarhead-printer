@@ -3,7 +3,8 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 (function(global, doc) {
 
-	const _THINGS = [];
+	const _STORAGE  = global.localStorage;
+	const _THINGS   = [];
 
 	const _fetch = global.fetch;
 	const _load  = function(url) {
@@ -26,6 +27,17 @@ APP = typeof APP !== 'undefined' ? APP : {};
 		}).catch(error => {
 			console.error(error);
 		});
+
+	};
+
+	const _create_thing = function(name, amount) {
+
+		return {
+			name:     name,
+			amount:   amount,
+			state:    false,
+			requires: []
+		};
 
 	};
 
@@ -69,18 +81,9 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 		}).forEach(id => {
 
-			let thing = things.find(other => other.name === id) || null;
-			if (thing !== null) {
-
-				let stl = thing.stl || null;
-				if (stl === null) {
-					chunks.push(_render(amounts[id], id, thing));
-				}
-
-			} else {
-
-				chunks.push(_render(amounts[id], id, null));
-
+			let chunk = _render_thing(amounts[id], id, things);
+			if (chunk !== '') {
+				chunks.push(chunk);
 			}
 
 		});
@@ -91,15 +94,21 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 	};
 
-	const _render = function(amount, name, thing) {
+	const _render_thing = function(amount, name, things) {
 
 		let chunk = '';
+		let thing = things.find(other => other.name === name) || null;
+		if (thing === null) {
+			thing = _create_thing(name, amount);
+			things.push(thing);
+		}
 
-		// TODO: Figure out smart way to remember checkboxes
-
-		chunk += '<td><input type="checkbox"></td>';
-		chunk += '<td>' + amount + 'x</td>';
-		chunk += '<td>' + name + '</td>';
+		let stl = thing.stl || null;
+		if (stl === null) {
+			chunk += '<td><input type="checkbox" onchange="APP.check(\'' + thing.name + '\', this.checked)"' + (thing.state === true ? 'checked' : '') + '></td>';
+			chunk += '<td>' + amount + 'x</td>';
+			chunk += '<td>' + name + '</td>';
+		}
 
 		return chunk;
 
@@ -118,6 +127,9 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 
 		JSON.parse(JSON.stringify(_THINGS)).forEach(thing => {
+
+			thing.state = false;
+
 
 			let depends = thing.depends || null;
 			if (depends !== null) {
@@ -207,7 +219,29 @@ APP = typeof APP !== 'undefined' ? APP : {};
 		global.AMOUNTS = amounts;
 		global.THINGS  = things;
 
+		try {
+			_STORAGE.setItem('jarhead-amounts', JSON.stringify(amounts));
+			_STORAGE.setItem('jarhead-things',  JSON.stringify(things));
+		} catch (err) {
+		}
+
 		_render_table(amounts, things);
+
+	};
+
+	APP.check = (id, state) => {
+
+		console.log('"' + id + '"', state);
+
+		let thing = THINGS.find(other => other.name === id) || null;
+		if (thing !== null) {
+			thing.state = state;
+		}
+
+		try {
+			_STORAGE.setItem('jarhead-things', JSON.stringify(THINGS));
+		} catch (err) {
+		}
 
 	};
 
@@ -217,6 +251,31 @@ APP = typeof APP !== 'undefined' ? APP : {};
 	 */
 
 	global.addEventListener('DOMContentLoaded', () => {
+
+		try {
+
+			let amounts = _STORAGE.getItem('jarhead-amounts');
+			if (amounts !== null) {
+				global.AMOUNTS = JSON.parse(amounts);
+			}
+
+			let things = _STORAGE.getItem('jarhead-things');
+			if (things !== null) {
+				global.THINGS = JSON.parse(things);
+			}
+
+			if (amounts !== null && things !== null) {
+
+				console.info('Restored Things', AMOUNTS, THINGS);
+				_render_table(AMOUNTS, THINGS);
+
+				APP.checklist();
+
+			}
+
+		} catch (err) {
+		}
+
 
 		Promise.all([
 			_load('meta/aluminium-parts.json'),

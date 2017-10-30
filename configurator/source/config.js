@@ -128,7 +128,7 @@ APP = typeof APP !== 'undefined' ? APP : {};
 		global.SETTINGS = settings;
 
 		try {
-			_STORAGE.setItem('jarhead-printer', JSON.stringify(settings));
+			_STORAGE.setItem('jarhead-settings', JSON.stringify(settings));
 		} catch (err) {
 		}
 
@@ -142,8 +142,13 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 	APP.restore = () => {
 
-		_STORAGE.removeItem('jarhead-printer');
+		_STORAGE.removeItem('jarhead-settings');
+		_STORAGE.removeItem('jarhead-amounts');
+		_STORAGE.removeItem('jarhead-things');
+
 		global.SETTINGS      = Object.assign({}, _DEFAULTS);
+		global.AMOUNTS       = {};
+		global.THINGS        = [];
 
 		_update_inputs(SETTINGS);
 
@@ -164,14 +169,15 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 		try {
 
-			let settings = _STORAGE.getItem('jarhead-printer');
+			let settings = _STORAGE.getItem('jarhead-settings');
 			if (settings !== null) {
 				global.SETTINGS = JSON.parse(settings);
 			}
 
-			_update_inputs(SETTINGS);
-
-			console.info('Restored Settings', SETTINGS);
+			if (settings !== null) {
+				console.info('Restored Settings', SETTINGS);
+				_update_inputs(SETTINGS);
+			}
 
 		} catch (err) {
 		}

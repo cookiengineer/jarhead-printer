@@ -45,9 +45,7 @@ APP = typeof APP !== 'undefined' ? APP : {};
 			url = '../design/' + stl;
 		}
 
-		// TODO: Figure out smart way to remember checkboxes
-
-		chunk += '<td><input type="checkbox"></td>';
+		chunk += '<td><input type="checkbox" onchange="APP.check(\'' + thing.name + '\', this.checked)"' + (thing.state === true ? 'checked' : '') + '></td>';
 		chunk += '<td>' + amount + 'x</td>';
 		chunk += '<td>' + name + '</td>';
 
