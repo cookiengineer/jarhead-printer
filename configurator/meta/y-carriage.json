@@ -29,11 +29,8 @@
 		"config-wheels": "605zz"
 	},
 	"requires": [{
-		"name": "ABEC-5 605ZZ Bearing",
-		"amount": 8
-	}, {
 		"name": "M5 Washer",
-		"amount": 8
+		"amount": 4
 	}, {
 		"name": "605ZZ Wheel",
 		"amount": 4
@@ -112,9 +109,6 @@
 		"amount": 1
 	}, {
 		"name": "M5 Nut",
-		"amount": 1
-	}, {
-		"name": "M5 Washer",
 		"amount": 1
 	}, {
 		"name": "Belt Tensioner",

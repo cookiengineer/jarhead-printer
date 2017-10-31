@@ -4,49 +4,56 @@
 	"length": 440,
 	"depends": {
 		"z": 440
-	}
+	},
+	"requires": []
 }, {
 	"name": "2040 Aluminium Profile B-Type Nut 6",
 	"amount": 2,
 	"length": 340,
 	"depends": {
 		"y": 340
-	}
+	},
+	"requires": []
 }, {
 	"name": "2040 Aluminium Profile B-Type Nut 6",
 	"amount": 3,
 	"length": 310,
 	"depends": {
 		"x": 310
-	}
+	},
+	"requires": []
 }, {
 	"name": "2020 Aluminium Profile B-Type Nut 6",
 	"amount": 1,
 	"length": 425,
 	"depends": {
 		"x": 425
-	}
+	},
+	"requires": []
 }, {
 	"name": "2020 Aluminium Profile B-Type Nut 6",
 	"amount": 1,
 	"length": 380,
 	"depends": {
 		"y": 380
-	}
+	},
+	"requires": []
 }, {
 	"name": "8mm Threaded Rod",
 	"amount": 2,
 	"length": 355,
 	"depends": {
 		"z": 355
-	}
+	},
+	"requires": []
 }, {
 	"name": "8mm Rod",
 	"amount": 2,
 	"length": 360,
 	"depends": {
 		"z": 360
-	}
+	},
+	"requires": []
 }, {
 	"name": "GT20 Aluminium Pulley",
 	"amount": 0,

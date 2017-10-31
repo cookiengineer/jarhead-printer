@@ -5,29 +5,39 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 	const _table = doc.querySelector('#checklist-table');
 
-	const _render_table = function(amounts, things) {
+	const _render_table = function(cache) {
 
-		let chunks = [];
+		let chunks = Object.keys(cache.amounts)
+			.sort((a, b) => {
 
-		Object.keys(amounts).sort((a, b) => {
+				if (a < b) return -1;
+				if (a > b) return  1;
+				return 0;
 
-			if (a < b) return -1;
-			if (a > b) return  1;
-			return 0;
+			}).filter(name => {
+				return cache.types[name] === 'print';
+			}).map(name => {
 
-		}).forEach(id => {
+				return {
+					name:   name,
+					amount: cache.amounts[name],
+					state:  cache.states[name],
+					thing:  _THINGS.find(t => t.name === name) || null
+				};
 
-			let thing = things.find(other => other.name === id) || null;
-			if (thing !== null) {
+			}).filter(entry => {
 
-				let stl = thing.stl || null;
-				if (stl !== null) {
-					chunks.push(_render(amounts[id], id, thing));
+				if (entry.thing !== null) {
+					return APP.check_depends(entry.thing);
 				}
 
-			}
+				return false;
 
-		});
+			}).map(entry => {
+
+				return _render_entry(entry.amount, entry.name, entry.state, entry.thing);
+
+			});
 
 		if (_table !== null) {
 			_table.innerHTML = '<tr>' + chunks.join('</tr><tr>') + '</tr>';
@@ -35,17 +45,12 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 	};
 
-	const _render = function(amount, name, thing) {
+	const _render_entry = function(amount, name, state, thing) {
 
 		let chunk = '';
+		let url   = '../design/' + thing.stl;
 
-		let url = null;
-		let stl = thing.stl || null;
-		if (stl !== null) {
-			url = '../design/' + stl;
-		}
-
-		chunk += '<td><input type="checkbox" onchange="APP.check(\'' + thing.name + '\', this.checked)"' + (thing.state === true ? 'checked' : '') + '></td>';
+		chunk += '<td><input type="checkbox" onchange="APP.check(\'' + name + '\', this.checked)"' + (state === true ? 'checked' : '') + '></td>';
 		chunk += '<td>' + amount + 'x</td>';
 		chunk += '<td>' + name + '</td>';
 
@@ -65,13 +70,11 @@ APP = typeof APP !== 'undefined' ? APP : {};
 	 * IMPLEMENTATION
 	 */
 
-	APP.checklist = () => {
+	APP.render_checklist = APP.update_checklist = () => {
 
-		let amounts = global.AMOUNTS || null;
-		let things  = global.THINGS  || null;
-
-		if (amounts !== null && things !== null) {
-			_render_table(amounts, things);
+		let cache = global.CACHE || null;
+		if (cache !== null) {
+			_render_table(cache);
 		}
 
 	};

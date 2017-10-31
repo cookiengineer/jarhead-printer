@@ -15,14 +15,17 @@
 			"config-idlers": "gt20"
 		}
 	}, {
+		"name": "ABEC-5 605ZZ Bearing",
+		"amount": 2,
+		"depends": {
+			"config-idlers": "605zz"
+		}
+	}, {
 		"name": "M5x30mm Bolt",
 		"amount": 1
 	}, {
 		"name": "M5 self-locking Nut",
 		"amount": 1
-	}, {
-		"name": "M5 Washer",
-		"amount": 4
 	}, {
 		"name": "Belt Tensioner Knob",
 		"amount": 1
@@ -36,7 +39,10 @@
 	"name": "605ZZ Wheel",
 	"amount": 0,
 	"stl": "parts/8x605ZZ_Wheel.stl",
-	"requires": []
+	"requires": [{
+		"name": "ABEC-5 605ZZ Bearing",
+		"amount": 2
+	}]
 }, {
 	"name": "Flat Idler",
 	"amount": 0,

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html manifest="index.appcache">
-	<head>
+<html>
+	<head manifest="index.appcache">
 		<title>Jarhead Configurator</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -9,6 +9,8 @@
 
 		<link rel="stylesheet" href="./design/layout.css">
 		<link rel="stylesheet" href="./design/content.css">
+
+		<script src="source/meta.js"></script>
 
 	</head>
 	<body>
@@ -49,7 +51,8 @@
 					<div><label style="width:12em" for="config-pulleys-alu">Alu GT20 Pulley</label><input id="config-pulleys-alu" name="config-pulleys" type="radio" value="alu" checked></div>
 					<div><label style="width:12em" for="config-pulleys-gt20">PLA GT20 Pulley</label><input id="config-pulleys-gt20" name="config-pulleys" type="radio" value="gt20"></div>
 					<p>Which Belt Idlers do you want to use?</p>
-					<div><label style="width:12em" for="config-idlers-flat">PLA Flat Idler</label><input id="config-idlers-flat" name="config-idlers" type="radio" value="flat" checked></div>
+					<div><label style="width:12em" for="config-idlers-605zz">2x 605ZZ</label><input id="config-idlers-605zz" name="config-idlers" type="radio" value="605zz" checked></div>
+					<div><label style="width:12em" for="config-idlers-flat">PLA Flat Idler</label><input id="config-idlers-flat" name="config-idlers" type="radio" value="flat"></div>
 					<div><label style="width:12em" for="config-idlers-gt20">PLA GT20 Idler</label><input id="config-idlers-gt20" name="config-idlers" type="radio" value="gt20"></div>
 				</fieldset>
 				<footer>

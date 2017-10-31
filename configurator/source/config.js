@@ -3,46 +3,29 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 (function(global, doc) {
 
-	const _DEFAULTS = global.DEFAULTS = {
+	const _DEFAULTS = global.DEFAULTS = global.SETTINGS = {
 		x:       265,
 		y:       210,
 		z:       300,
-		idlers:  'flat',
+		idlers:  '605zz',
 		nuts:    'alu',
 		pulleys: 'alu',
 		tools:   'e3d-hotend',
 		wheels:  'openbuilds',
 	};
 
+	const _INPUTS  = {};
 	const _STORAGE = global.localStorage;
-
-	const _inputs = {
-		x: doc.querySelector('input#config-x'),
-		y: doc.querySelector('input#config-y'),
-		z: doc.querySelector('input#config-z'),
-		tools: [
-			doc.querySelector('input#config-tools-e3d'),
-			doc.querySelector('input#config-tools-cnc')
-		],
-		wheels: [
-			doc.querySelector('input#config-wheels-openbuilds'),
-			doc.querySelector('input#config-wheels-605zz')
-		],
-		idlers: [
-			doc.querySelector('input#config-idlers-flat'),
-			doc.querySelector('input#config-idlers-gt20')
-		]
-	};
 
 	const _update_inputs = function(settings) {
 
-		for (let id in _inputs) {
+		for (let id in _INPUTS) {
 
-			if (_inputs[id] instanceof Array) {
+			if (_INPUTS[id] instanceof Array) {
 
 				let map = settings[id];
 
-				_inputs[id].forEach(input => {
+				_INPUTS[id].forEach(input => {
 
 					if (input.type === 'checkbox') {
 
@@ -66,7 +49,7 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 			} else {
 
-				_inputs[id].value = settings[id];
+				_INPUTS[id].value = settings[id];
 
 			}
 
@@ -85,31 +68,21 @@ APP = typeof APP !== 'undefined' ? APP : {};
 		let depends = thing.depends || null;
 		if (depends !== null) {
 
-			let valid          = true;
-			let config_idlers  = depends['config-idlers']  || null;
-			let config_nuts    = depends['config-nuts']    || null;
-			let config_pulleys = depends['config-pulleys'] || null;
-			let config_tools   = depends['config-tools']   || null;
-			let config_wheels  = depends['config-wheels']  || null;
+			let valid = true;
 
-			if (config_idlers !== null && SETTINGS.idlers !== config_idlers) {
-				valid = false;
-			}
+			for (let id in depends) {
 
-			if (config_nuts !== null && SETTINGS.nuts !== config_nuts) {
-				valid = false;
-			}
+				let value = depends[id];
 
-			if (config_pulleys !== null && SETTINGS.pulleys !== config_pulleys) {
-				valid = false;
-			}
+				if (id.startsWith('config-')) {
 
-			if (config_tools !== null && SETTINGS.tools !== config_tools) {
-				valid = false;
-			}
+					let key = id.split('-').slice(1).join('-');
+					if (SETTINGS[key] !== value) {
+						valid = false;
+					}
 
-			if (config_wheels !== null && SETTINGS.wheels !== config_wheels) {
-				valid = false;
+				}
+
 			}
 
 			return valid;
@@ -125,13 +98,13 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 		let settings = {};
 
-		for (let id in _inputs) {
+		for (let id in _INPUTS) {
 
-			if (_inputs[id] instanceof Array) {
+			if (_INPUTS[id] instanceof Array) {
 
 				let values = [];
 
-				_inputs[id].forEach(input => {
+				_INPUTS[id].forEach(input => {
 
 					if (input.type === 'checkbox') {
 
@@ -157,7 +130,7 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 			} else {
 
-				let value = _inputs[id].value;
+				let value = _INPUTS[id].value;
 				if (/^([0-9]+)$/g.test(value)) {
 					value = parseInt(value, 10);
 				}
@@ -176,8 +149,8 @@ APP = typeof APP !== 'undefined' ? APP : {};
 		}
 
 
-		APP.bill();
-		APP.checklist();
+		APP.update_bill();
+		APP.update_checklist();
 
 		APP.view('bill');
 
@@ -186,20 +159,18 @@ APP = typeof APP !== 'undefined' ? APP : {};
 	APP.restore = () => {
 
 		_STORAGE.removeItem('jarhead-settings');
-		_STORAGE.removeItem('jarhead-amounts');
-		_STORAGE.removeItem('jarhead-things');
+		_STORAGE.removeItem('jarhead-cache');
 
-		global.SETTINGS      = Object.assign({}, _DEFAULTS);
-		global.AMOUNTS       = {};
-		global.THINGS        = [];
+		global.SETTINGS = Object.assign({}, _DEFAULTS);
+		global.CACHE    = {};
 
 		_update_inputs(SETTINGS);
 
 		console.info('Restored Defaults', SETTINGS);
 
 
-		APP.bill();
-		APP.checklist();
+		APP.update_bill();
+		APP.update_checklist();
 
 	};
 
@@ -210,6 +181,29 @@ APP = typeof APP !== 'undefined' ? APP : {};
 	 */
 
 	doc.addEventListener('DOMContentLoaded', () => {
+
+		Array.from(doc.querySelectorAll('#config input'))
+			.filter(input => input.name.startsWith('config-'))
+			.forEach(input => {
+
+				let name = input.getAttribute('name').split('-').slice(1).join('-');
+				let type = input.getAttribute('type');
+				if (type === 'checkbox' || type === 'radio')  {
+
+					if (_INPUTS[name] === undefined) {
+						_INPUTS[name] = [ input ];
+					} else {
+						_INPUTS[name].push(input);
+					}
+
+				} else if (type === 'number') {
+
+					_INPUTS[name] = input;
+
+				}
+
+			});
+
 
 		try {
 
