@@ -128,6 +128,19 @@ a:focus {
 fieldset {
 	color: #ffffff;
 	border: 1px solid #2a2c36;
+	margin: 0px 0px 1em 0px;
+}
+
+fieldset > legend {
+	padding: 0.5em 1em;
+}
+
+fieldset > p {
+	margin: 1.5em 0px 0.5em 0px;
+}
+
+fieldset > p:first-of-type {
+	margin-top: 0px;
 }
 
 table th {
@@ -138,6 +151,12 @@ table th {
 table td {
 	margin: 0px;
 	padding: 2px 1em;
+}
+
+table td.warning {
+	font-size: 2em;
+	text-align: center;
+	padding: 2em 1em;
 }
 
 table tr:nth-child(2n) {

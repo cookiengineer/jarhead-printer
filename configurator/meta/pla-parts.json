@@ -2,30 +2,19 @@
 	"name": "Belt Tensioner",
 	"amount": 0,
 	"stl": "parts/2xBelt_Tensioner.stl",
-	"depends": {
-		"config-idlers": "openbuilds"
-	},
 	"requires": [{
-		"name": "M5x30mm Bolt",
-		"amount": 1
+		"name": "Flat Idler",
+		"amount": 1,
+		"depends": {
+			"config-idlers": "flat"
+		}
 	}, {
-		"name": "M5 self-locking Nut",
-		"amount": 1
+		"name": "GT20 Idler",
+		"amount": 1,
+		"depends": {
+			"config-idlers": "gt20"
+		}
 	}, {
-		"name": "M5 Washer",
-		"amount": 2
-	}, {
-		"name": "Openbuilds Pulley Idler",
-		"amount": 1
-	}]
-}, {
-	"name": "Belt Tensioner",
-	"amount": 0,
-	"stl": "parts/2xBelt_Tensioner.stl",
-	"depends": {
-		"config-idlers": "gt20"
-	},
-	"requires": [{
 		"name": "M5x30mm Bolt",
 		"amount": 1
 	}, {
@@ -34,9 +23,6 @@
 	}, {
 		"name": "M5 Washer",
 		"amount": 4
-	}, {
-		"name": "GT20 Idler",
-		"amount": 1
 	}, {
 		"name": "Belt Tensioner Knob",
 		"amount": 1
@@ -50,6 +36,11 @@
 	"name": "605ZZ Wheel",
 	"amount": 0,
 	"stl": "parts/8x605ZZ_Wheel.stl",
+	"requires": []
+}, {
+	"name": "Flat Idler",
+	"amount": 0,
+	"stl": "parts/2xFlat_Idler.stl",
 	"requires": []
 }, {
 	"name": "GT20 Idler",

@@ -3,10 +3,19 @@
 	"amount": 1,
 	"stl": "frame/1xZ_Endstop.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 2
-	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 2,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 2,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 2
 	}, {
 		"name": "Endstop Switch",
@@ -17,10 +26,19 @@
 	"amount": 1,
 	"stl": "frame/1xZ_Motor_Mount_Left.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 3
-	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 3
 	}, {
 		"name": "M3x20mm Bolt",
@@ -34,10 +52,19 @@
 	"amount": 1,
 	"stl": "frame/1xZ_Motor_Mount_Right.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 3
-	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 3
 	}, {
 		"name": "M3x20mm Bolt",
@@ -51,13 +78,22 @@
 	"amount": 1,
 	"stl": "frame/1xZ_Rod_Holder_Left.stl",
 	"requires": [{
+		"name": "M5 T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
 		"name": "ABEC-5 608ZZ Bearing",
 		"amount": 1
 	}, {
 		"name": "M5x10mm Bolt",
-		"amount": 3
-	}, {
-		"name": "M5 T-Slot Nut",
 		"amount": 3
 	}]
 }, {
@@ -65,13 +101,22 @@
 	"amount": 1,
 	"stl": "frame/1xZ_Rod_Holder_Right.stl",
 	"requires": [{
+		"name": "M5 T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 3,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
 		"name": "ABEC-5 608ZZ Bearing",
 		"amount": 1
 	}, {
 		"name": "M5x10mm Bolt",
-		"amount": 3
-	}, {
-		"name": "M5 T-Slot Nut",
 		"amount": 3
 	}]
 }, {
@@ -79,13 +124,22 @@
 	"amount": 2,
 	"stl": "frame/2xBottom_Tee_Plate.stl",
 	"requires": [{
+		"name": "M5 T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
 		"name": "M6x20mm Bolt",
 		"amount": 2
 	}, {
 		"name": "M5x10mm Bolt",
-		"amount": 4
-	}, {
-		"name": "M5 T-Slot Nut",
 		"amount": 4
 	}]
 }, {
@@ -93,10 +147,19 @@
 	"amount": 2,
 	"stl": "frame/2xSide_Tee_Corner.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 6
-	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 6,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 6,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 6
 	}]
 }, {
@@ -104,10 +167,19 @@
 	"amount": 2,
 	"stl": "frame/2xTop_Corner_Plate.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 6
-	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 6,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 6,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 6
 	}]
 }, {
@@ -115,10 +187,19 @@
 	"amount": 8,
 	"stl": "frame/8xBottom_Corner_Plate.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 4
-	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 4
 	}]
 }]

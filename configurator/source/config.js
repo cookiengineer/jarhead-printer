@@ -4,12 +4,14 @@ APP = typeof APP !== 'undefined' ? APP : {};
 (function(global, doc) {
 
 	const _DEFAULTS = global.DEFAULTS = {
-		x:      265,
-		y:      210,
-		z:      300,
-		tools:  'e3d-hotend',
-		wheels: 'openbuilds',
-		idlers: 'openbuilds'
+		x:       265,
+		y:       210,
+		z:       300,
+		idlers:  'flat',
+		nuts:    'alu',
+		pulleys: 'alu',
+		tools:   'e3d-hotend',
+		wheels:  'openbuilds',
 	};
 
 	const _STORAGE = global.localStorage;
@@ -27,7 +29,7 @@ APP = typeof APP !== 'undefined' ? APP : {};
 			doc.querySelector('input#config-wheels-605zz')
 		],
 		idlers: [
-			doc.querySelector('input#config-idlers-openbuilds'),
+			doc.querySelector('input#config-idlers-flat'),
 			doc.querySelector('input#config-idlers-gt20')
 		]
 	};
@@ -77,6 +79,47 @@ APP = typeof APP !== 'undefined' ? APP : {};
 	/*
 	 * IMPLEMENTATION
 	 */
+
+	APP.check_depends = (thing) => {
+
+		let depends = thing.depends || null;
+		if (depends !== null) {
+
+			let valid          = true;
+			let config_idlers  = depends['config-idlers']  || null;
+			let config_nuts    = depends['config-nuts']    || null;
+			let config_pulleys = depends['config-pulleys'] || null;
+			let config_tools   = depends['config-tools']   || null;
+			let config_wheels  = depends['config-wheels']  || null;
+
+			if (config_idlers !== null && SETTINGS.idlers !== config_idlers) {
+				valid = false;
+			}
+
+			if (config_nuts !== null && SETTINGS.nuts !== config_nuts) {
+				valid = false;
+			}
+
+			if (config_pulleys !== null && SETTINGS.pulleys !== config_pulleys) {
+				valid = false;
+			}
+
+			if (config_tools !== null && SETTINGS.tools !== config_tools) {
+				valid = false;
+			}
+
+			if (config_wheels !== null && SETTINGS.wheels !== config_wheels) {
+				valid = false;
+			}
+
+			return valid;
+
+		}
+
+
+		return true;
+
+	};
 
 	APP.config = () => {
 
@@ -156,6 +199,7 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 
 		APP.bill();
+		APP.checklist();
 
 	};
 

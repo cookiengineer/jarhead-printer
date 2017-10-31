@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2017-10-30
+# 2017-10-31
 
 index.html
 design/content.css
@@ -8,8 +8,8 @@ source/layout.js
 source/config.js
 source/bill.js
 source/checklist.js
-meta/aluminium-parts.json
-meta/parts.json
+meta/alu-parts.json
+meta/pla-parts.json
 meta/tools.json
 meta/frame.json
 meta/x-carriage.json

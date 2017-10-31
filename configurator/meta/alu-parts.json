@@ -47,4 +47,12 @@
 	"depends": {
 		"z": 360
 	}
+}, {
+	"name": "GT20 Aluminium Pulley",
+	"amount": 0,
+	"requires": []
+}, {
+	"name": "M5 Aluminium T-Slot Nut",
+	"amount": 0,
+	"requires": []
 }]

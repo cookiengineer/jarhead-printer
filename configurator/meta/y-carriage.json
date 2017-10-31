@@ -55,17 +55,35 @@
 	"amount": 1,
 	"stl": "y-carriage/1xY-Rear_with_Motor_Mount.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 4
+		"name": "GT20 Pulley",
+		"amount": 1,
+		"depends": {
+			"config-pulleys": "gt20"
+		}
+	}, {
+		"name": "GT20 Aluminium Pulley",
+		"amount": 1,
+		"depends": {
+			"config-pulleys": "alu"
+		}
 	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 4
 	}, {
 		"name": "M3x20mm Bolt",
 		"amount": 4
-	}, {
-		"name": "GT20 Pulley",
-		"amount": 1
 	}, {
 		"name": "Endstop Switch",
 		"amount": 1
@@ -75,10 +93,19 @@
 	"amount": 1,
 	"stl": "y-carriage/1xY-Front_with_Belt_Puller.stl",
 	"requires": [{
-		"name": "M5x10mm Bolt",
-		"amount": 4
-	}, {
 		"name": "M5 T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "pla"
+		}
+	}, {
+		"name": "M5 Aluminium T-Slot Nut",
+		"amount": 4,
+		"depends": {
+			"config-nuts": "alu"
+		}
+	}, {
+		"name": "M5x10mm Bolt",
 		"amount": 4
 	}, {
 		"name": "M5x30mm Bolt",

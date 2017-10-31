@@ -48,17 +48,21 @@ APP = typeof APP !== 'undefined' ? APP : {};
 			let amount = req.amount;
 			if (amount > 0) {
 
-				let name = req.name;
+				let name  = req.name;
+				let valid = APP.check_depends(req);
+				if (valid === true) {
 
-				if (amounts[name] === undefined) {
-					amounts[name] = amount;
-				} else {
-					amounts[name] += amount;
-				}
+					if (amounts[name] === undefined) {
+						amounts[name] = amount;
+					} else {
+						amounts[name] += amount;
+					}
 
-				let other = things.find(t => t.name === name) || null;
-				if (other !== null) {
-					_walk_requires(amounts, things, other);
+					let other = things.find(t => t.name === name) || null;
+					if (other !== null) {
+						_walk_requires(amounts, things, other);
+					}
+
 				}
 
 			}
@@ -150,24 +154,7 @@ APP = typeof APP !== 'undefined' ? APP : {};
 				}
 
 
-				let valid = true;
-				let config_idlers = depends['config-idlers'] || null;
-				let config_tools  = depends['config-tools']  || null;
-				let config_wheels = depends['config-wheels'] || null;
-
-				if (config_idlers !== null && SETTINGS.idlers !== config_idlers) {
-					valid = false;
-				}
-
-				if (config_tools !== null && SETTINGS.tools !== config_tools) {
-					valid = false;
-				}
-
-				if (config_wheels !== null && SETTINGS.wheels !== config_wheels) {
-					valid = false;
-				}
-
-
+				let valid = APP.check_depends(thing);
 				if (valid === true) {
 					things.push(thing);
 				}
@@ -278,8 +265,8 @@ APP = typeof APP !== 'undefined' ? APP : {};
 
 
 		Promise.all([
-			_load('meta/aluminium-parts.json'),
-			_load('meta/parts.json'),
+			_load('meta/alu-parts.json'),
+			_load('meta/pla-parts.json'),
 			_load('meta/tools.json'),
 			_load('meta/frame.json'),
 			_load('meta/x-carriage.json'),

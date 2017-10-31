@@ -25,28 +25,37 @@
 			</noscript>
 			<section id="config" class="active">
 				<fieldset>
-					<legend>Configuration</legend>
+					<legend>Frame</legend>
 					<p>What is the desired Manufacturing Volume?</p>
 					<div><label for="config-x">X</label><input id="config-x" name="config-x" type="number" value="265" min="0" step="5"> mm</div>
 					<div><label for="config-y">Y</label><input id="config-y" name="config-y" type="number" value="210" min="0" step="5"> mm</div>
 					<div><label for="config-z">Z</label><input id="config-z" name="config-z" type="number" value="300" min="0" step="5"> mm</div>
-					<br>
+					<p>Which T-Slot Nuts do you want to use?</p>
+					<div><label style="width:12em" for="config-nuts-alu">Alu T-Slot Nuts</label><input id="config-nuts-alu" name="config-nuts" type="radio" value="alu" checked></div>
+					<div><label style="width:12em" for="config-nuts-pla">PLA T-Slot Nuts</label><input id="config-nuts-pla" name="config-nuts" type="radio" value="pla"></div>
+				</fieldset>
+				<fieldset>
+					<legend>Tools</legend>
 					<p>Which Tools do you want to use?</p>
 					<div><label style="width:6em" for="config-tools-e3d">E3D Hotend</label><input id="config-tools-e3d" name="config-tools" type="checkbox" value="e3d-hotend" checked></div>
 					<div><label style="width:6em;text-decoration:line-through" for="config-tools-cnc">CNC Drill</label><input id="config-tools-cnc" name="config-tools" type="checkbox" value="cnc-drill" disabled title="... coming soon"></div>
-					<br>
+				</fieldset>
+				<fieldset>
+					<legend>Wheels, Pulleys and Idlers</legend>
 					<p>Which Wheels do you want to use?</p>
 					<div><label style="width:12em" for="config-wheels-openbuilds">Openbuilds Delrin Mini</label><input id="config-wheels-openbuilds" name="config-wheels" type="radio" value="openbuilds" checked></div>
-					<div><label style="width:12em" for="config-wheels-605zz">Self-Printed 605ZZ</label><input id="config-wheels-605zz" name="config-wheels" type="radio" value="605zz"></div>
-					<br>
+					<div><label style="width:12em" for="config-wheels-605zz">PLA 605ZZ</label><input id="config-wheels-605zz" name="config-wheels" type="radio" value="605zz"></div>
+					<p>Which Belt Pulleys do you want to use?</p>
+					<div><label style="width:12em" for="config-pulleys-alu">Alu GT20 Pulley</label><input id="config-pulleys-alu" name="config-pulleys" type="radio" value="alu" checked></div>
+					<div><label style="width:12em" for="config-pulleys-gt20">PLA GT20 Pulley</label><input id="config-pulleys-gt20" name="config-pulleys" type="radio" value="gt20"></div>
 					<p>Which Belt Idlers do you want to use?</p>
-					<div><label style="width:12em" for="config-idlers-openbuilds">Openbuilds Pulley Idler</label><input id="config-idlers-openbuilds" name="config-idlers" type="radio" value="openbuilds" checked></div>
-					<div><label style="width:12em" for="config-idlers-gt20">Self-Printed GT20 Idler</label><input id="config-idlers-gt20" name="config-idlers" type="radio" value="gt20"></div>
-					<br>
-					<br>
+					<div><label style="width:12em" for="config-idlers-flat">PLA Flat Idler</label><input id="config-idlers-flat" name="config-idlers" type="radio" value="flat" checked></div>
+					<div><label style="width:12em" for="config-idlers-gt20">PLA GT20 Idler</label><input id="config-idlers-gt20" name="config-idlers" type="radio" value="gt20"></div>
+				</fieldset>
+				<footer>
 					<button id="config-save" onclick="APP.config()">Save Changes</button>
 					<button id="config-restore" onclick="APP.restore()">Restore Defaults</button>
-				</fieldset>
+				</footer>
 			</section>
 			<section id="bill">
 				<table>
@@ -56,6 +65,7 @@
 						<th>Description</th>
 					</thead>
 					<tbody id="bill-table">
+						<tr><td colspan="3" class="warning">Please choose a configuration first.</td></tr>
 					</tbody>
 				</table>
 			</section>
@@ -68,6 +78,7 @@
 						<th>STL</th>
 					</thead>
 					<tbody id="checklist-table">
+						<tr><td colspan="4" class="warning">Please choose a configuration first.</td></tr>
 					</tbody>
 				</table>
 			</section>
